@@ -135,6 +135,8 @@ h6 {
   transition: all 0.5s;
   z-index: 997;
   background-color: var(--background-color);
+  display: flex;
+  flex-direction: column;
 }
 
 .header .topbar {
@@ -157,7 +159,6 @@ h6 {
 }
 
 @media (max-width: 575px) {
-
   .header .topbar .contact-info i a,
   .header .topbar .contact-info i span {
     font-size: 13px;
@@ -187,16 +188,22 @@ h6 {
 
 .header .branding {
   background-color: var(--background-color);
+  display: flex;
+  align-items: center; /* Center logo vertically */
+  justify-content: space-between; /* Space out logo and nav */
   min-height: 60px;
   padding: 10px 0;
+  max-height: 100px; /* Set a maximum height to control header expansion */
 }
 
 .header .logo {
   line-height: 1;
+  display: flex;
+  align-items: center; /* Center content vertically */
 }
 
 .header .logo img {
-  height: 80px;
+  height: 150px; /* Set your desired height here */
   margin-right: 8px;
 }
 
@@ -216,6 +223,7 @@ h6 {
   visibility: hidden;
   overflow: hidden;
 }
+
 
 /*--------------------------------------------------------------
 # Navigation Menu
@@ -799,6 +807,7 @@ section,
 
 .hero h1 {
   margin: 0;
+  padding-bottom: 15px;
   font-size: 48px;
   font-weight: 700;
   line-height: 56px;
@@ -806,6 +815,10 @@ section,
 
 .hero h1 span {
   color: var(--accent-color);
+}
+
+.hero h2 {
+  padding-bottom: 15px;
 }
 
 .hero p {
@@ -1042,6 +1055,11 @@ section,
 
 .clients .swiper-slide img:hover {
   transform: scale(1.1);
+}
+
+.clients #konika {
+  height: 150px;
+  width: 150px;
 }
 
 /*--------------------------------------------------------------
@@ -1319,6 +1337,25 @@ section,
 }
 
 /*--------------------------------------------------------------
+# Politics Section
+--------------------------------------------------------------*/
+/* Fading effect on carousel images */
+#politicsCarousel .carousel-item img {
+  transition: opacity 0.5s ease-in-out;
+}
+
+#politicsCarousel .carousel-item img:hover {
+  opacity: 0.7; /* Adjust the opacity to your preference */
+}
+
+#politics h5 {
+  color: yellow;
+  font-size: 1.6rem; /* Adjust as needed */
+  font-weight: bold;
+}
+
+
+/*--------------------------------------------------------------
 # Faq Section
 --------------------------------------------------------------*/
 .faq .faq-container .faq-item {
@@ -1407,6 +1444,7 @@ section,
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
+
 .contact .info-wrap {
   background-color: var(--surface-color);
   box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
@@ -1455,52 +1493,4 @@ section,
   color: var(--contrast-color);
 }
 
-.contact .php-email-form {
-  background-color: var(--surface-color);
-  height: 100%;
-  padding: 30px;
-  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
-}
 
-@media (max-width: 575px) {
-  .contact .php-email-form {
-    padding: 20px;
-  }
-}
-
-.contact .php-email-form input[type=text],
-.contact .php-email-form input[type=email],
-.contact .php-email-form textarea {
-  font-size: 14px;
-  padding: 10px 15px;
-  box-shadow: none;
-  border-radius: 0;
-  color: var(--default-color);
-  background-color: var(--surface-color);
-  border-color: color-mix(in srgb, var(--default-color), transparent 80%);
-}
-
-.contact .php-email-form input[type=text]:focus,
-.contact .php-email-form input[type=email]:focus,
-.contact .php-email-form textarea:focus {
-  border-color: var(--accent-color);
-}
-
-.contact .php-email-form input[type=text]::placeholder,
-.contact .php-email-form input[type=email]::placeholder,
-.contact .php-email-form textarea::placeholder {
-  color: color-mix(in srgb, var(--default-color), transparent 70%);
-}
-
-.contact .php-email-form button[type=submit] {
-  color: var(--contrast-color);
-  background: var(--accent-color);
-  border: 0;
-  padding: 10px 30px;
-  transition: 0.4s;
-  border-radius: 50px;
-}
-
-.contact .php-email-form button[type=submit]:hover {
-  background: color-mix(in srgb, var(--accent-color), transparent 25%);
-}
